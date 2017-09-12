@@ -5,4 +5,5 @@ IMAGE_INSTALL += " \
 	alsa-utils \
 	avahi-daemon \
 	avahi-dnsconfd \
+	connman	\
 	"
