@@ -3,6 +3,7 @@ include recipes-core/images/rpi-basic-image.bb
 
 require common.inc
 
-IMAGES_INSTALL +=" \
+IMAGE_INSTALL +=" \
 		iw \
+		linux-firmware-bcm43430 \
 		"

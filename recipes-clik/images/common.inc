@@ -7,4 +7,5 @@ IMAGE_INSTALL += " \
 	python3 \
 	python3-py \
 	python3-flask \
+	wayland \
 	"
