@@ -9,6 +9,7 @@ ALEXAPI_REQUIREMENTS = " \
 	${PYTHONS}-pocketsphinx \
 	${PYTHONS}-coloredlogs \
 	${PYTHONS}-future \
+	${PYTHONS}-python-vlc \
 	"
 
 IMAGE_INSTALL += " \
