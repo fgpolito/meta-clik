@@ -16,7 +16,7 @@ email the python-porting mailing list: https://mail.python.org/mailman/listinfo/
 
 HOMEPAGE = "http://pypi.python.org/pypi/six/"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://README.rst;md5=6f00d4a50713fa859858dd9abaa35b21"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=6f00d4a50713fa859858dd9abaa35b21"
 
 PYPI_PACKAGE = "six"
 inherit pypi
