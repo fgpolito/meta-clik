@@ -5,6 +5,8 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=826ebda787eb48e78aec2624f9faba72"
 DEPENDS = "pulseaudio swig-native"
 
+RDEPENDS_${PN} += "libpulse"
+
 PYPI_PACKAGE = "pocketsphinx"
 inherit pypi
 
