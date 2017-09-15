@@ -9,6 +9,8 @@ HOMEPAGE = "https://python-future.org/"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=3f457538b297bd0ef86564b8ac216ad7"
 
+RDEPENDS_${PN} += "${PYTHON_PN}-2to3"
+
 PYPI_PACKAGE = "future"
 inherit pypi
 
