@@ -5,12 +5,16 @@ It is intended and tested to run on a wide range of platforms, \
 such as Raspberry Pi, Orange Pi, \
 CHIP and ordinary Linux desktops."
 
-HOMEPAGE = "https://github.com/alexa-pi/AlexaPi"
+HOMEPAGE = "https://github.com/fgpolito/AlexaPi"
 
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=1d0e51f67100e3dc1a39b4653653a38c"
 
 ALEXAPI_PYTHON ?= "python"
+
+DEPENDS = "${ALEXAPI_PYTHON}-native"
+
+inherit autotools ${ALEXAPI_PYTHON}-dir
 
 ALEXAPI_REQUIREMENTS = " \
 	${ALEXAPI_PYTHON}-requests \
@@ -29,5 +33,17 @@ ALEXAPI_REQUIREMENTS = " \
 # depend on python packages
 RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}" 
 
-SRC_URI="git://github.com/alexa-pi/AlexaPi.git;branch=master"
-SRCREV = "ae8c2ed84ff9aed5f51946fb5d2e51d3736c8db0"
+SRC_URI="git://github.com/fgpolito/AlexaPi.git;branch=master"
+SRCREV = "7cf7a3b75959a616cc5fabc356822815c746f1af"
+
+#explicitly set source dir as we are building from SCM
+S = "${WORKDIR}/git"
+
+FILES_${PN} = " \
+		${bindir}/AlexaPi \
+		${libdir}/systemd/system/* \
+		${PYTHON_SITEPACKAGES_DIR}/alexapi/* \
+		${PYTHON_SITEPACKAGES_DIR}/alexapi/device_platforms/* \
+		${PYTHON_SITEPACKAGES_DIR}/alexapi/playback_handlers/* \
+		${PYTHON_SITEPACKAGES_DIR}/alexapi/triggers/* \
+		"
