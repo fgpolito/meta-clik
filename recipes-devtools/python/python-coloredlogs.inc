@@ -24,4 +24,4 @@ RDEPENDS_${PN} += "\
 
 BBCLASSEXTEND = "native nativesdk"
 
-INSANE_SKIP_${PN} += "installed-vs-shipped"
+FILES_${PN} += "${datadir}/*"
