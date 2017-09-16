@@ -34,7 +34,7 @@ ALEXAPI_REQUIREMENTS = " \
 RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}" 
 
 SRC_URI="git://github.com/fgpolito/AlexaPi.git;branch=master"
-SRCREV = "7cf7a3b75959a616cc5fabc356822815c746f1af"
+SRCREV = "29908a99a80dba95545017cd07a48a25e34917fa"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
@@ -47,3 +47,6 @@ FILES_${PN} = " \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/playback_handlers/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/triggers/* \
 		"
+do_configure_prepend() {
+	autoreconf -i
+}
