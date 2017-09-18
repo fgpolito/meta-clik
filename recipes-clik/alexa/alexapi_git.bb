@@ -34,13 +34,14 @@ ALEXAPI_REQUIREMENTS = " \
 RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}" 
 
 SRC_URI="git://github.com/fgpolito/AlexaPi.git;branch=master"
-SRCREV = "29908a99a80dba95545017cd07a48a25e34917fa"
+SRCREV = "fbbdcbea503dfcd44c4f410a25667b958c620b58"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
 
 FILES_${PN} = " \
 		${bindir}/AlexaPi \
+		${bindir}/AlexaAuth \
 		${libdir}/systemd/system/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/device_platforms/* \
