@@ -20,7 +20,10 @@ IMAGE_INSTALL += " \
 ALEXAPI_USERNAME 	= "alexapi"
 ALEXAPI_GROUP 		= "alexapi"
 
+ALEXAPI_EXTRA_GROUPS	= "audio"
+
 EXTRA_USERS_PARAMS = " \
 		groupadd ${ALEXAPI_GROUP}; \
-		useradd -g ${ALEXAPI_GROUP} ${ALEXAPI_USERNAME}; \
+		useradd -g ${ALEXAPI_GROUP} -G ${ALEXAPI_EXTRA_GROUPS} \
+		${ALEXAPI_USERNAME}; \
 		"
