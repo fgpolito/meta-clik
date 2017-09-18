@@ -9,4 +9,6 @@ IMAGE_INSTALL += " \
 	sox \
 	ntp \
 	screen \
+	connman \
+	alexapi \
 	"
