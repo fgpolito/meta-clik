@@ -29,12 +29,17 @@ ALEXAPI_REQUIREMENTS = " \
 	${ALEXAPI_PYTHON}-python-vlc \
 	${ALEXAPI_PYTHON}-importlib \
 	${ALEXAPI_PYTHON}-multiprocessing \
+	${ALEXAPI_PYTHON}-xml \
+	${ALEXAPI_PYTHON}-argparse \
 	"
 # depend on python packages
 RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}" 
 
-SRC_URI="git://github.com/fgpolito/AlexaPi.git;branch=master"
-SRCREV = "fbbdcbea503dfcd44c4f410a25667b958c620b58"
+SRC_URI= " \
+	git://github.com/fgpolito/AlexaPi.git;branch=master \
+	file://0001-Fixed-import-name.patch \
+	"
+SRCREV = "5696ef6fcb2131be81ae69ee69eef20c067afc86"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
@@ -47,7 +52,8 @@ FILES_${PN} = " \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/device_platforms/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/playback_handlers/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/triggers/* \
+		${sysconfdir}/AlexaPi/* \
 		"
 do_configure_prepend() {
-	autoreconf -i
+	autoreconf -i ${S}
 }
