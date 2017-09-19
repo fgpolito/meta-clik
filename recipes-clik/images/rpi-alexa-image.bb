@@ -5,5 +5,6 @@ require common.inc
 
 IMAGE_INSTALL +=" \
 		iw \
-		linux-firmware-bcm43430 \
+		linux-firmware \
+		mesa \
 		"
