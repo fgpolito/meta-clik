@@ -39,7 +39,7 @@ SRC_URI= " \
 	git://github.com/fgpolito/AlexaPi.git;branch=master \
 	file://0001-Fixed-import-name.patch \
 	"
-SRCREV = "5696ef6fcb2131be81ae69ee69eef20c067afc86"
+SRCREV = "dec8ebdc9eadd5e6acf1b4539408c18ff4fc91fc"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
