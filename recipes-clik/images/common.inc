@@ -9,15 +9,15 @@ IMAGE_INSTALL += " \
 	avahi-dnsconfd \
 	wayland \
 	weston \
-	weston-init \
 	sox \
 	ntp \
 	screen \
 	connman \
 	connman-client \
 	alexapi \
-	ioquake3 \
 	libdrm \
+	vlc \
+	mesa \
 	"
 
 # Create alexapi user & group
