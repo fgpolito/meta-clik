@@ -14,7 +14,7 @@ SRCREV = "45de6be4c233891eb70e5592f3287a4af39d6002"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "libsdl2"
+DEPENDS = "libsdl2 curl zlib libjpeg-turbo libogg libopus opusfile"
 
 COPYDIR = "${D}${datadir}/${PN}"
 export COPYDIR
@@ -28,6 +28,22 @@ export DEFAULT_BASEDIR
 # do not strip right in 'copyfiles' target. Let bitbake do it.
 NO_STRIP = "1"
 export NO_STRIP
+
+# do not use internal libs
+USE_INTERNAL_LIBS = "0"
+export USE_INTERNAL_LIBS
+
+# use standard system headers
+USE_LOCAL_HEADERS = "0"
+export LOCAL_HEADERS
+
+# do not use openAL
+USE_OPENAL = "0"
+export USE_OPENAL
+
+#do not build the renderers as external libraries
+USE_RENDERER_DLOPEN = "0"
+export USE_RENDERER_DLOPEN
 
 ARCH= "${TRANSLATED_TARGET_ARCH}"
 export ARCH
