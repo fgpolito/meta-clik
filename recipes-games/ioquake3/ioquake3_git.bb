@@ -48,6 +48,8 @@ export USE_RENDERER_DLOPEN
 ARCH= "${TRANSLATED_TARGET_ARCH}"
 export ARCH
 
+inherit pkgconfig
+
 do_install () {
 	mkdir -p ${COPYDIR}
 	mkdir -p ${COPYBINDIR}
