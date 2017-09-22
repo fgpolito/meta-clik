@@ -39,7 +39,7 @@ SRC_URI= " \
 	git://github.com/fgpolito/AlexaPi.git;branch=master \
 	file://0001-Fixed-import-name.patch \
 	"
-SRCREV = "c91b1a68d48a1a314a623ab60eb829a4394cab64"
+SRCREV = "03479450fb6d70a4d9ce6673df5c831d834b7785"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
@@ -47,6 +47,7 @@ S = "${WORKDIR}/git"
 FILES_${PN} = " \
 		${bindir}/AlexaPi \
 		${bindir}/AlexaAuth \
+		${bindir}/gpio \
 		${libdir}/systemd/system/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/device_platforms/* \
