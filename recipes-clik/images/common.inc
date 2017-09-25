@@ -8,7 +8,6 @@ IMAGE_INSTALL += " \
 	avahi-daemon \
 	avahi-dnsconfd \
 	wayland \
-	weston \
 	sox \
 	ntp \
 	screen \
@@ -18,6 +17,13 @@ IMAGE_INSTALL += " \
 	libdrm \
 	vlc \
 	mesa \
+	systemd-extra-utils \
+	connman-wait-online \
+	python-flask \
+	python-flask-ask \
+	python-aniso8601 \
+	libssl \
+	libcrypto \
 	"
 
 # Create alexapi user & group
