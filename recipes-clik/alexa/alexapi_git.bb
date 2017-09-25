@@ -47,6 +47,7 @@ FILES_${PN} = " \
 		${bindir}/AlexaPi \
 		${bindir}/AlexaAuth \
 		${bindir}/gpio \
+		${datadir}/* \
 		${libdir}/systemd/system/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/* \
 		${PYTHON_SITEPACKAGES_DIR}/alexapi/device_platforms/* \
