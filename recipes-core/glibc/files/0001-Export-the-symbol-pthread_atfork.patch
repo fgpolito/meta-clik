@@ -1,0 +1,37 @@
+From 5abc3123cd79f86f0e2f8d6304a53c16c7232363 Mon Sep 17 00:00:00 2001
+From: Francesco Giancane <francesco.giancane@polito.it>
+Date: Mon, 25 Sep 2017 18:58:57 +0200
+Subject: [PATCH] Export the symbol pthread_atfork.
+
+---
+ nptl/pthread_atfork.c | 11 +----------
+ 1 file changed, 1 insertion(+), 10 deletions(-)
+
+diff --git a/nptl/pthread_atfork.c b/nptl/pthread_atfork.c
+index dc2ea07887..d7b2546003 100644
+--- a/nptl/pthread_atfork.c
++++ b/nptl/pthread_atfork.c
+@@ -43,19 +43,10 @@ extern void *__dso_handle __attribute__ ((__weak__,
+ 
+ /* Hide the symbol so that no definition but the one locally in the
+    executable or DSO is used.  */
+-int
+-#ifndef __pthread_atfork
+-/* Don't mark the compatibility function as hidden.  */
+-attribute_hidden
+-#endif
+-__pthread_atfork (void (*prepare) (void), void (*parent) (void),
++int attribute_hidden __pthread_atfork (void (*prepare) (void), void (*parent) (void),
+ 		  void (*child) (void))
+ {
+   return __register_atfork (prepare, parent, child,
+ 			    &__dso_handle == NULL ? NULL : __dso_handle);
+ }
+-#ifndef __pthread_atfork
+-extern int pthread_atfork (void (*prepare) (void), void (*parent) (void),
+-			   void (*child) (void)) attribute_hidden;
+ strong_alias (__pthread_atfork, pthread_atfork)
+-#endif
+-- 
+2.13.5
+
