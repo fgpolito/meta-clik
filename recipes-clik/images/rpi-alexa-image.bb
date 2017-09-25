@@ -6,5 +6,4 @@ require common.inc
 IMAGE_INSTALL +=" \
 		iw \
 		linux-firmware \
-		mesa \
 		"

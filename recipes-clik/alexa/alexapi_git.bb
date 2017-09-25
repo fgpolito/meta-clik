@@ -31,6 +31,11 @@ ALEXAPI_REQUIREMENTS = " \
 	${ALEXAPI_PYTHON}-multiprocessing \
 	${ALEXAPI_PYTHON}-xml \
 	${ALEXAPI_PYTHON}-argparse \
+	${ALEXAPI_PYTHON}-flask \
+	${ALEXAPI_PYTHON}-flask-ask \
+	${ALEXAPI_PYTHON}-aniso8601 \
+	${ALEXAPI_PYTHON}-asn1crypto \
+	ngrok \
 	"
 # depend on python packages
 RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}" 
@@ -38,7 +43,7 @@ RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}"
 SRC_URI= " \
 	git://github.com/fgpolito/AlexaPi.git;branch=master \
 	"
-SRCREV = "2484524dcbcecd094c10a3f6631a9a6ce1772150"
+SRCREV = "a9dcccc2d3873d362f3d31b4b5e2c233b76d3c96"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
@@ -46,6 +51,7 @@ S = "${WORKDIR}/git"
 FILES_${PN} = " \
 		${bindir}/AlexaPi \
 		${bindir}/AlexaAuth \
+		${bindir}/AlexaCustomSkill \
 		${bindir}/gpio \
 		${datadir}/* \
 		${libdir}/systemd/system/* \

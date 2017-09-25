@@ -7,23 +7,14 @@ IMAGE_INSTALL += " \
 	alsa-utils \
 	avahi-daemon \
 	avahi-dnsconfd \
-	wayland \
 	sox \
 	ntp \
 	screen \
 	connman \
 	connman-client \
 	alexapi \
-	libdrm \
-	vlc \
-	mesa \
 	systemd-extra-utils \
 	connman-wait-online \
-	python-flask \
-	python-flask-ask \
-	python-aniso8601 \
-	libssl \
-	libcrypto \
 	"
 
 # Create alexapi user & group
