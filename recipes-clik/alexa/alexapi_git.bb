@@ -43,7 +43,7 @@ RDEPENDS_${PN} = "${ALEXAPI_REQUIREMENTS}"
 SRC_URI= " \
 	git://github.com/fgpolito/AlexaPi.git;branch=master \
 	"
-SRCREV = "a9dcccc2d3873d362f3d31b4b5e2c233b76d3c96"
+SRCREV = "690df7bb8cf6f45834a75366ab26411e86f4c531"
 
 #explicitly set source dir as we are building from SCM
 S = "${WORKDIR}/git"
