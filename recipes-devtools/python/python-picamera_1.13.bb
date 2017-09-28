@@ -11,6 +11,9 @@ PYPI_PACKAGE = "picamera"
 
 inherit pypi setuptools
 
-DEPENDS += ""
+DEPENDS +=	" \
+		virtual/libgles2 \
+		virtual/egl \
+		"
 
 RDEPENDS_${PN} += ""
