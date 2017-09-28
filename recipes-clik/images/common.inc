@@ -15,6 +15,12 @@ IMAGE_INSTALL += " \
 	alexapi \
 	systemd-extra-utils \
 	connman-wait-online \
+	libgles2 \
+	egl \
+	libgl \
+	mesa-gl \
+	weston \
+	wayland \
 	"
 
 # Create alexapi user & group
