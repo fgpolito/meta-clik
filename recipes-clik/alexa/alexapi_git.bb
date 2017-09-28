@@ -35,6 +35,7 @@ ALEXAPI_REQUIREMENTS = " \
 	${ALEXAPI_PYTHON}-flask-ask \
 	${ALEXAPI_PYTHON}-aniso8601 \
 	${ALEXAPI_PYTHON}-asn1crypto \
+	${ALEXAPI_PYTHON}-picamera \
 	ngrok \
 	"
 # depend on python packages
