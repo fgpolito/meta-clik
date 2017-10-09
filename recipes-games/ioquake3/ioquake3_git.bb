@@ -8,13 +8,15 @@ HOMEPAGE = "https://github.com/ioquake/ioq3"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING.txt;md5=87113aa2b484c59a17085b5c3f900ebf"
 
-SRC_URI = "git://github.com/ioquake/ioq3.git;branch=master"
+SRC_URI = 	" \
+		git://github.com/ioquake/ioq3.git;branch=master \
+		"
 
 SRCREV = "45de6be4c233891eb70e5592f3287a4af39d6002"
 
 S = "${WORKDIR}/git"
 
-DEPENDS = "libsdl2 curl zlib libjpeg-turbo libogg libopus opusfile"
+DEPENDS = "libsdl2 curl zlib libjpeg-turbo libogg libopus opusfile virtual/mesa virtual/libgl"
 
 COPYDIR = "${D}${datadir}/${PN}"
 export COPYDIR
