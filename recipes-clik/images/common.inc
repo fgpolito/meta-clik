@@ -21,6 +21,7 @@ IMAGE_INSTALL += " \
 	mesa-gl \
 	weston \
 	wayland \
+	userland \
 	"
 
 # Create alexapi user & group
