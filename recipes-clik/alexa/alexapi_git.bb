@@ -36,6 +36,7 @@ ALEXAPI_REQUIREMENTS = " \
 	${ALEXAPI_PYTHON}-aniso8601 \
 	${ALEXAPI_PYTHON}-asn1crypto \
 	${ALEXAPI_PYTHON}-picamera \
+	${ALEXAPI_PYTHON}-adafruit-pca9685 \
 	ngrok \
 	"
 # depend on python packages
