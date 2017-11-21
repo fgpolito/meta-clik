@@ -22,6 +22,7 @@ IMAGE_INSTALL += " \
 	weston \
 	wayland \
 	userland \
+	i2c-tools \
 	"
 
 # Create alexapi user & group
