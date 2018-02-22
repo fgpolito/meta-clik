@@ -17,8 +17,9 @@ IMAGE_INSTALL += " \
 	linux-firmware \
 	opencv \
 	python3-opencv \
+	python3-pyv4l2camera \
 	libgles2 \
-	egl \
+	libegl \
 	libgl \
 	libv4l \
 	media-ctl \
