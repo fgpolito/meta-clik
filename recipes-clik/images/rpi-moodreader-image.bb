@@ -14,6 +14,12 @@ IMAGE_INSTALL += " \
         systemd-extra-utils \
         connman-wait-online \
         i2c-tools \
-	linux-firmware \        
+	linux-firmware \
+	opencv \
+	python3-opencv \
+	libgles2 \
+	egl \
+	libgl \
+	libv4l \
+	media-ctl \
 	"
-
