@@ -26,6 +26,7 @@ IMAGE_INSTALL += " \
 	userland \
 	python3-picamera \
 	python3-typing \
+	python3-spidev \
 	"
 
 RPI_EXTRA_MODULES=" \
