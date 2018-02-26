@@ -8,6 +8,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=39ea92752a35cf67d8a885d8e3af3c69"
 
 DEPENDS += "libv4l"
 
+RDEPENDS_${PN} += "${PYTHON_PN}-typing"
+
 PYPI_PACKAGE = "PyV4L2Camera"
 PYPI_PACKAGE_EXT = "tar.gz"
 inherit pypi
