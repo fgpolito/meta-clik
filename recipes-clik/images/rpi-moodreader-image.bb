@@ -27,6 +27,7 @@ IMAGE_INSTALL += " \
 	python3-picamera \
 	python3-typing \
 	python3-spidev \
+	python3-pyaudio \
 	"
 
 RPI_EXTRA_MODULES=" \
