@@ -28,8 +28,8 @@ IMAGE_INSTALL += " \
 	python3-typing \
 	python3-spidev \
 	python3-pyaudio \
+	python3-modules \
 	"
-
 RPI_EXTRA_MODULES=" \
 	kernel-module-bcm203x \
 	kernel-module-bcm2835-gpiomem \
