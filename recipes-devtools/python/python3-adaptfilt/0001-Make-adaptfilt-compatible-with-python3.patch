@@ -1,0 +1,142 @@
+From c7921f2fdd855a1360ed56f9b1ed20723659c032 Mon Sep 17 00:00:00 2001
+From: Francesco Giancane <francesco.giancane@polito.it>
+Date: Wed, 7 Mar 2018 12:38:06 +0100
+Subject: [PATCH] Make adaptfilt compatible with python3
+
+adaptfilt library was written in a way that only python2 could execute it.
+
+Now it has been ported to python3 needs.
+
+Signed-off-by: Francesco Giancane <francesco.giancane@polito.it>
+---
+ adaptfilt/__init__.py                       | 20 ++++++++++----------
+ adaptfilt/ap.py                             |  4 ++--
+ adaptfilt/lms.py                            |  4 ++--
+ adaptfilt/nlms.py                           |  4 ++--
+ adaptfilt/nlmsru.py                         |  4 ++--
+ adaptfilt/{_paramcheck.py => paramcheck.py} |  0
+ 6 files changed, 18 insertions(+), 18 deletions(-)
+ rename adaptfilt/{_paramcheck.py => paramcheck.py} (100%)
+
+diff --git a/adaptfilt/__init__.py b/adaptfilt/__init__.py
+index 4f5b947..30449d2 100644
+--- a/adaptfilt/__init__.py
++++ b/adaptfilt/__init__.py
+@@ -16,11 +16,11 @@ except:
+  available before using adaptfilt')
+ 
+ # Import functions directly into adaptfilt namespace
+-from lms import lms
+-from nlms import nlms
+-from nlmsru import nlmsru
+-from ap import ap
+-from misc import mswe
++from adaptfilt.lms import lms
++from adaptfilt.nlms import nlms
++from adaptfilt.nlmsru import nlmsru
++from adaptfilt.ap import ap
++from adaptfilt.misc import mswe
+ 
+ 
+ def rundoctests(verbose=False):
+@@ -38,8 +38,8 @@ def rundoctests(verbose=False):
+     apres = doctest.testmod(testmod3, verbose=verbose)
+     miscres = doctest.testmod(testmod4, verbose=verbose)
+     nlmsrures = doctest.testmod(testmod5, verbose=verbose)
+-    print '   LMS: ', lmsres
+-    print '  NLMS: ', nlmsres
+-    print 'NLMSRU: ', nlmsrures
+-    print '    AP: ', apres
+-    print '  MISC: ', miscres
++    print ('   LMS: ', lmsres)
++    print ('  NLMS: ', nlmsres)
++    print ('NLMSRU: ', nlmsrures)
++    print ('    AP: ', apres)
++    print ('  MISC: ', miscres)
+diff --git a/adaptfilt/ap.py b/adaptfilt/ap.py
+index beb39a8..1d810b1 100644
+--- a/adaptfilt/ap.py
++++ b/adaptfilt/ap.py
+@@ -1,5 +1,5 @@
+ import numpy as np
+-import _paramcheck as _pchk
++import adaptfilt.paramcheck as _pchk
+ 
+ 
+ def ap(u, d, M, step, K, eps=0.001, leak=0, initCoeffs=None, N=None,
+@@ -145,7 +145,7 @@ def ap(u, d, M, step, K, eps=0.001, leak=0, initCoeffs=None, N=None,
+         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
+ 
+     # Perform filtering
+-    for n in xrange(N):
++    for n in range(N):
+         # Generate U matrix and D vector with current data
+         U = np.zeros((M, K))
+         for k in np.arange(K):
+diff --git a/adaptfilt/lms.py b/adaptfilt/lms.py
+index df60320..6f8b4b0 100644
+--- a/adaptfilt/lms.py
++++ b/adaptfilt/lms.py
+@@ -1,5 +1,5 @@
+ import numpy as np
+-import _paramcheck as _pchk
++import adaptfilt.paramcheck as _pchk
+ 
+ 
+ def lms(u, d, M, step, leak=0, initCoeffs=None, N=None, returnCoeffs=False):
+@@ -130,7 +130,7 @@ def lms(u, d, M, step, leak=0, initCoeffs=None, N=None, returnCoeffs=False):
+         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
+ 
+     # Perform filtering
+-    for n in xrange(N):
++    for n in range(N):
+         x = np.flipud(u[n:n+M])  # Slice to get view of M latest datapoints
+         y[n] = np.dot(x, w)
+         e[n] = d[n+M-1] - y[n]
+diff --git a/adaptfilt/nlms.py b/adaptfilt/nlms.py
+index 36a0607..2cdd47e 100644
+--- a/adaptfilt/nlms.py
++++ b/adaptfilt/nlms.py
+@@ -1,5 +1,5 @@
+ import numpy as np
+-import _paramcheck as _pchk
++import adaptfilt.paramcheck as _pchk
+ 
+ 
+ def nlms(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
+@@ -137,7 +137,7 @@ def nlms(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
+         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
+ 
+     # Perform filtering
+-    for n in xrange(N):
++    for n in range(N):
+         x = np.flipud(u[n:n+M])  # Slice to get view of M latest datapoints
+         y[n] = np.dot(x, w)
+         e[n] = d[n+M-1] - y[n]
+diff --git a/adaptfilt/nlmsru.py b/adaptfilt/nlmsru.py
+index 52326bf..d0c662e 100644
+--- a/adaptfilt/nlmsru.py
++++ b/adaptfilt/nlmsru.py
+@@ -1,5 +1,5 @@
+ import numpy as np
+-import _paramcheck as _pchk
++import adaptfilt.paramcheck as _pchk
+ 
+ 
+ def nlmsru(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
+@@ -147,7 +147,7 @@ def nlmsru(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
+         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
+ 
+     # Perform filtering
+-    for n in xrange(N):
++    for n in range(N):
+         x = np.flipud(u[n:n+M])  # Slice to get view of M latest datapoints
+         y[n] = np.dot(x, w)
+         e[n] = d[n+M-1] - y[n]
+diff --git a/adaptfilt/_paramcheck.py b/adaptfilt/paramcheck.py
+similarity index 100%
+rename from adaptfilt/_paramcheck.py
+rename to adaptfilt/paramcheck.py
+-- 
+2.14.3
+
