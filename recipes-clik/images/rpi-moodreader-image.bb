@@ -29,23 +29,6 @@ IMAGE_INSTALL += " \
 	python3-spidev \
 	python3-pyaudio \
 	python3-modules \
-	"
-RPI_EXTRA_MODULES=" \
-	kernel-module-bcm203x \
-	kernel-module-bcm2835-gpiomem \
-	kernel-module-bcm2835-smi \ 
-	kernel-module-bcm2835-smi-dev \
-	kernel-module-bcm2835-smi-nand \
-	kernel-module-bcm2835-v4l2 \
-	kernel-module-bcm3510 \
-	kernel-module-bcma \
-	kernel-module-btbcm \
-	kernel-module-can-bcm \
-	kernel-module-i2c-bcm2708 \
-	kernel-module-i2c-bcm2835 \
-	kernel-module-pwm-bcm2835 \
-	kernel-module-snd-bcm2835 \
-	kernel-module-snd-soc-bcm2835-i2s \
-	kernel-module-spi-bcm2835 \
-	kernel-module-spi-bcm2835aux \
+	python3-google-api-python-client \
+	python3-adaptfilt \
 	"
