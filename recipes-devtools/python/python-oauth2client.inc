@@ -5,7 +5,7 @@ oauth2client is a client library for OAuth 2.0. \
 
 HOMEPAGE = "http://github.com/google/oauth2client/"
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=94023d14f6b58272fd885e4e3f2f08b3"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=038e1390e94fe637991fa5569daa62bc"
 
 PYPI_PACKAGE = "oauth2client"
 inherit pypi
