@@ -35,6 +35,12 @@ IMAGE_INSTALL += " \
 	minicom \
 	curl \
 	boost \
+	python3-rpigpio \
+	python3-requests \
+	python3-cherrypy \
+	python3-adafruit-pca9685 \
+	python3-cognitive-face \
+	python3-urllib3 \
 	"
 
 LINUX_FIRMWARES = "\
