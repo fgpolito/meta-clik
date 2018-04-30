@@ -24,6 +24,7 @@ IMAGE_INSTALL += " \
 	libv4l \
 	media-ctl \
 	userland \
+	python3-pip \
 	python3-picamera \
 	python3-typing \
 	python3-spidev \
@@ -41,6 +42,21 @@ IMAGE_INSTALL += " \
 	python3-adafruit-pca9685 \
 	python3-cognitive-face \
 	python3-urllib3 \
+	python3-numpy \
+	apache2 \
+	${PHPS} \
+	mosquitto \
+	git \
+	"
+
+PHPS = " \
+	php \
+	php-fpm \
+	php-phar \
+	php-cgi \
+	php-fpm-apache2 \
+	php-cli \
+	php-pear \
 	"
 
 LINUX_FIRMWARES = "\
