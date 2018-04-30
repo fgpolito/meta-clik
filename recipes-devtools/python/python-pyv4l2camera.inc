@@ -4,7 +4,7 @@ DESCRIPTION = "A simple, libv4l2-based frames capture library."
 
 HOMEPAGE = "https://gitlab.com/radish/PyV4L2Camera"
 LICENSE = "GPLv3"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=39ea92752a35cf67d8a885d8e3af3c69"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-3.0;md5=c79ff39f19dfec6d293b95dea7b07891"
 
 DEPENDS += "libv4l"
 
